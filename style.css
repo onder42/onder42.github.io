@@ -1,0 +1,301 @@
+/* ==========================================================================
+   RESET & SYSTEM VARIABLE GLOBALS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-deep-black: #050505;
+    --bg-terminal-dark: #0a0e0a;
+    --bg-panel-dark: #121812;
+    --neon-green-glow: #39ff14;
+    --neon-green-dim: #1fb50c;
+    --terminal-text: #aaffaa;
+    --terminal-border: #1f421f;
+    --terminal-font: 'Courier New', Courier, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--terminal-font);
+    background-color: var(--bg-deep-black);
+    color: var(--terminal-text);
+}
+
+body {
+    overflow-x: hidden; /* Prevents global page blowout */
+    width: 100%;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 15px;
+    padding: 15px 40px;
+    background-color: var(--bg-terminal-dark);
+    border-bottom: 2px solid var(--terminal-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--neon-green-glow);
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px var(--neon-green-dim);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--terminal-text);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--neon-green-glow);
+    text-shadow: 0 0 3px var(--neon-green-dim);
+}
+
+/* ==========================================================================
+   HERO DISPLAY SECTION
+   ========================================================================== */
+.hero-section {
+    padding: 60px 20px;
+    background-color: var(--bg-deep-black);
+    border-bottom: 1px dashed var(--terminal-border);
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: var(--neon-green-glow);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px var(--neon-green-dim);
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--terminal-text);
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   BUTTON CONTROL DECK (GRID OVERVIEW)
+   ========================================================================== */
+.control-deck {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: var(--neon-green-dim);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.matrix-btn {
+    background-color: var(--bg-terminal-dark);
+    color: var(--neon-green-dim);
+    border: 1px solid var(--terminal-border);
+    padding: 15px;
+    font-family: var(--terminal-font);
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.matrix-btn:hover {
+    background-color: var(--terminal-border);
+    color: var(--neon-green-glow);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+}
+
+.matrix-btn.active {
+    background-color: transparent;
+    color: var(--neon-green-glow);
+    border: 1px solid var(--neon-green-glow);
+    box-shadow: inset 0 0 5px rgba(57, 255, 20, 0.2), 0 0 10px rgba(57, 255, 20, 0.4);
+}
+
+/* ==========================================================================
+   WORKSPACE DISPLAY (HARDENED MOBILE CONTAINMENT ARCHITECTURE)
+   ========================================================================== */
+.workspace {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 30px;
+    padding: 0 40px 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.display-panel {
+    flex: 1 1 45%;    
+    min-width: 0;      /* OVERRIDE Flexbox implicit tracking size values */
+    width: 100%;       /* Restricts element layout boundaries */
+    background-color: var(--bg-panel-dark);
+    border: 1px solid var(--terminal-border);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* Terminal Mock-window Bars */
+.panel-header {
+    background-color: var(--bg-terminal-dark);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--terminal-border);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    display: inline-block;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.panel-title {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: var(--neon-green-dim);
+    opacity: 0.7;
+}
+
+/* Fixed Body Container boundaries */
+.panel-body {
+    padding: 25px;
+    flex-grow: 1;
+    line-height: 1.6;
+    min-width: 0;
+    width: 100%;
+    word-break: break-word; /* Prevents long words/text rows blowing up width */
+}
+
+/* Force text block to drop columns */
+#concept-desc {
+    white-space: normal;
+}
+
+/* Code layout constraints */
+.code-body {
+    overflow-x: auto; 
+    max-width: 100%;
+    width: 100%;
+}
+
+.panel-body h3 {
+    color: var(--neon-green-glow);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 1px dashed var(--terminal-border);
+    padding-bottom: 5px;
+}
+
+.panel-body pre {
+    white-space: pre-wrap; /* Wrap lines instead of breaking bounds layout */
+    word-wrap: break-word;
+    font-family: var(--terminal-font);
+    font-size: 0.9rem;
+    max-width: 100%;
+}
+
+.panel-body code {
+    color: #88ff88;
+    word-break: break-all;
+}
+
+/* ==========================================================================
+   SYSTEM FOOTER UNIT
+   ========================================================================== */
+.system-footer {
+    background-color: var(--bg-terminal-dark);
+    border-top: 1px solid var(--terminal-border);
+    padding: 15px 40px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--neon-green-dim);
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   DEDICATED RESPONSIVE MOBILE VIEWPORTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar { 
+        padding: 15px 20px;
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    .nav-links {
+        padding-left: 0;
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .control-deck { 
+        padding: 20px; 
+    }
+
+    .button-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .workspace { 
+        padding: 0 20px 40px 20px;
+        flex-direction: column; 
+        max-width: 100vw;
+    }
+    
+    .display-panel {
+        flex: 1 1 auto; 
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
