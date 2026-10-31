@@ -10,14 +10,14 @@
 
     <!-- Header & Navigation Area -->
     <header class="navbar">
-        <div class="logo">&gt;_ PYTHON_MANUAL</div>
+        <div class="logo">&gt;_ HOME</div>
         <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="index.html">Reference Hub</a></li>
-                <li><a href="NN_projects.html">NN 10 Peojects</a></li>
+                <li><a href="NN_projects.html">NN 10 Projects</a></li>
                 <li><a href="https://techoneder.blogspot.com" target="_blank">Blog</a></li>
-                <li><a href="#https://python.org" target="_blank">About</a></li>
+                <li><a href="https://python.org" target="_blank">About</a></li>
             </ul>
         </nav>
     </header>
@@ -25,59 +25,55 @@
     <!-- Hero Showcase Section -->
     <section id="hero" class="hero-section">
         <div class="hero-content">
-            <h1>SYSTEM REFERENCE MANUAL</h1>
-            <p>Select a concept baseline node down below to output raw structural code data onto the terminal screens.</p>
+            <h1>CENTRAL OPERATING SYSTEM</h1>
+            <p>Welcome to the core environment. Access local manual baselines, explore deep learning engineering nodes, or review continuous publication logs via the interfaces below.</p>
         </div>
     </section>
 
-    <!-- Control Deck for Matrix Operations (Row & Column Buttons) -->
-    <section id="control-deck" class="control-deck">
-        <h2 class="section-title">COMMAND CORE SELECTION MATRIX</h2>
-        <div class="button-grid">
-            <button class="matrix-btn active" onclick="switchConcept('data_types')">DATA TYPES</button>
-            <button class="matrix-btn" onclick="switchConcept('functions')">FUNCTIONS</button>
-            <button class="matrix-btn" onclick="switchConcept('operators')">OPERATORS</button>
-            <button class="matrix-btn" onclick="switchConcept('list_comp')">LIST COMP</button>
-            <button class="matrix-btn" onclick="switchConcept('try_except')">TRY EXCEPT</button>
-            <button class="matrix-btn" onclick="switchConcept('file_handling')">FILE I/O</button>
-            <button class="matrix-btn" onclick="switchConcept('oop')">OOP CORE</button>
-            <button class="matrix-btn" onclick="switchConcept('classes')">CLASSES</button>
-            <a href="https://python.org" target="_blank"><button class="matrix-btn">DOCS</button></a>
-        </div>
-    </section>
-
-    <!-- Interactive Workspace Screen (Twin Flex Containers) -->
+    <!-- Workspace Container -->
     <main class="workspace">
-        
-        <!-- Screen Container 1: Concept Explanation Terminal -->
-        <section class="display-panel panel-left">
-            <div class="panel-header">
-                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="panel-title">concept_explanation.txt</span>
+        <div class="terminal-body">
+            
+            <!-- Container 1: Reference Hub -->
+            <div class="project-node">
+                <h3>NODE 01: SYSTEM REFERENCE HUB</h3>
+                <ul>
+                    <li><strong>Core Concept:</strong> Low-level foundations, local configuration protocols, and deterministic environment setup.</li>
+                    <li><strong>Functional Focus:</strong> Standard library references, environment variables (.env), and custom dependency isolation (venv).</li>
+                    <li><strong>System Utility:</strong> Quick-lookup command matrix tracking language primitives, loops, and mathematical operators.</li>
+                </ul><br/>
+                <div>
+                    <a href="index.html" class="matrix-btn">[ LOAD REFERENCE HUB ]</a>
+                </div>
             </div>
-            <div class="panel-body">
-                <h3 id="concept-title">Data Types</h3>
-                <p id="concept-desc">Data types represent the foundational data formats recognized natively by programming languages. They define how data is stored, what values it can contain, and what types of operations can be safely performed on that data structure.</p>
-            </div>
-        </section>
 
-        <!-- Screen Container 2: Code Implementation Output -->
-        <section class="display-panel panel-right">
-            <div class="panel-header">
-                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span class="panel-title">main.py</span>
+            <!-- Container 2: NN 10 Projects -->
+            <div class="project-node">
+                <h3>NODE 02: NEURAL NETWORKS FROM FIRST PRINCIPLES</h3>
+                <ul>
+                    <li><strong>Core Concept:</strong> Engineering machine learning algorithms from scratch without reliance on high-level frameworks.</li>
+                    <li><strong>Mathematical Focus:</strong> Matrix calculations, custom backward propagation loops, vector similarities, and custom transformer layouts.</li>
+                    <li><strong>System Utility:</strong> Progressive 10-stage engineering series advancing from single linear structures up to standalone auto-regressive engines.</li>
+                </ul><br/>
+                <div>
+                    <a href="NN_projects.html" class="matrix-btn">[ LAUNCH PROJECT MATRIX ]</a>
+                </div>
             </div>
-            <div class="panel-body code-body">
-                <pre><code id="concept-code"># Basic Data Types in Python
-integer_var = 42          # Whole number
-float_var = 3.14159       # Floating-point decimal
-boolean_var = True        # Logical Truth state
-string_var = "Hello"      # Text characters
 
-print(type(integer_var))  # Output verification</code></pre>
+            <!-- Container 3: TechOneder Blog -->
+            <div class="project-node">
+                <h3>NODE 03: TECHNICAL PUBLICATION LOGS (BLOG)</h3>
+                <ul>
+                    <li><strong>Core Concept:</strong> Continuous proof-of-work tracking architecture refinements, script refactoring, and code version control.</li>
+                    <li><strong>Operational Focus:</strong> Monolithic code cleanup, programmatic API connections, and structural separation of concerns.</li>
+                    <li><strong>System Utility:</strong> Detailed write-ups detailing local environment execution configurations and milestone repository updates.</li>
+                </ul><br/>
+                <div>
+                    <a href="https://techoneder.blogspot.com" target="_blank" class="matrix-btn">[ ACCESS LOG STACK ]</a>
+                </div>
             </div>
-        </section>
 
+        </div>
     </main>
 
     <!-- Footer System Status -->
@@ -85,7 +81,5 @@ print(type(integer_var))  # Output verification</code></pre>
         <p>SYSTEM STATUS: ONLINE || CURRENT_DIRECTORY: /root/programming/python</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
-
