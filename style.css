@@ -5,6 +5,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+
+h3 {
+    color: #1fb50c;
+}
+
+ul {
+    padding: 2em;
+}
+
+project-button {
+    text-decoration: none; 
+    display: inline-block; 
+    padding: 0.5rem 1rem; 
+    font-size: 0.85rem;
 }
 
 :root {
@@ -152,6 +168,22 @@ body {
 /* ==========================================================================
    WORKSPACE DISPLAY (HARDENED MOBILE CONTAINMENT ARCHITECTURE)
    ========================================================================== */
+.terminal-body {
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 0 1rem;
+}
+
+.project-node {
+    border: 1px solid var(--border-color, #333);
+    padding: 1.5em;
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
 .workspace {
     display: flex;
     flex-direction: row;
