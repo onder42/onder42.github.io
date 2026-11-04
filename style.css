@@ -8,8 +8,13 @@
     
 }
 
-h3 {
+p, h4{
+    padding-bottom: .5em;
+}
+
+h3{
     color: #1fb50c;
+    padding-bottom: .5em;
 }
 
 ul {
